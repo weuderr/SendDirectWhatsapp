@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento para WhatsApp</title>
+</head>
+<body>
+    <div id="whatsapp-content" style="width: 100%; height: 500px; overflow: auto;">
+        <button id="whatsapp-button">Clique aqui para abrir o WhatsApp</button>
+    </div>
+    
+    <script>
+        document.getElementById('whatsapp-button').addEventListener('click', function() {
+            // Registre o clique aqui (por exemplo, enviando para um serviço de análise)
+            console.log('Botão do WhatsApp clicado');
+            
+            // Use localStorage para armazenar o clique antes de redirecionar
+            localStorage.setItem('whatsappClick', 'true');
+
+            // Aguarde um momento antes de redirecionar para garantir que o rastreamento seja registrado
+            setTimeout(function() {
+                window.location.href = "whatsapp://send?phone=55961021247";
+            }, 500); // Aguarde 500 ms
+        });
+    </script>
+</body>
+</html>
